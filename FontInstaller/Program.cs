@@ -31,7 +31,7 @@ namespace FontInstaller
                 return;
             }
 
-            // install for pre 1809 or install for 1809+
+            // Install for pre 1809 or install for 1809+
             var installVerb = GetInstallVerb();
 
             // Files in windows and files to be installed
