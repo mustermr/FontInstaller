@@ -44,7 +44,7 @@ namespace FontInstaller
             var uniqueNewFonts = GetUniques(newFonts) as Dictionary<string, GlyphTypeface>;
             var fontsToInstall = GetDifferences(fonts, uniqueNewFonts) as Dictionary<string, GlyphTypeface>;
 
-            // install the appropriate font files
+            // Install the appropriate font files
             var totalFonts = fontsToInstall.Count();
             var counter = 1;
             foreach (var font in fontsToInstall.Keys)
