@@ -65,7 +65,7 @@ namespace FontInstaller
 
         public static string GetInstallVerb()
         {
-            var installVerb = "&install";
+            var installVerb = "&Install";
             var os = Environment.OSVersion.Version;
 
             if (os.Major == 10 && os.Build >= 17763)
@@ -80,7 +80,8 @@ namespace FontInstaller
         {
             var ttfFiles = Directory.GetFiles(folder, "*.ttf", SearchOption.AllDirectories);
             var pfmFiles = Directory.GetFiles(folder, "*.pfm", SearchOption.AllDirectories);
-            var allFiles = ttfFiles.Concat(pfmFiles).ToArray();
+            var otfFiles = Directory.GetFiles(folder, "*.otf", SearchOption.AllDirectories);
+            var allFiles = ttfFiles.Concat(pfmFiles).ToArray().Concat(otfFiles).ToArray();
             Console.WriteLine("Folder: " + folder);
             Console.WriteLine("Fonts: " + allFiles.Count() + "\n\n");
             return allFiles;
